@@ -1,4 +1,3 @@
-
 # Final Group Project
 
 ## Introduction
@@ -29,3 +28,7 @@ For this assignment, We'll use the dataset about "Cases, Hospitalization and Dea
 * _**Age 65-79**_: # cases/hospitalizations/deaths who are from age 65-79
 * _**Age 80+**_: # cases/hospitalizations/deaths who are aged 80 years or older
 * _**UnknownAge**_: # cases/hospitalizations/deaths with unknown age
+
+The link to our final project on the shinyapps server is:
+()
+

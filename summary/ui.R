@@ -6,10 +6,11 @@ shinyUI(fluidPage(
 
     sidebarLayout(
         sidebarPanel(
-          h3("Analysis, Data Quality, and Future Ideas"),
+          h3("Data Analysis, Data Quality, and Future Ideas"),
           selectInput("summaries", label = h4("Select Box"), 
-                      c("Analysis" , "Data Quality", "Future Idea"),
-                      selected = "Analysis")
+                      c("Data Analysis 1" , "Data Analysis 2",
+                        "Data Quality", "Future Idea"),
+                      selected = "Data Analysis 1")
           ),
 
         mainPanel(

@@ -21,7 +21,9 @@ shinyServer(function(input, output) {
     paste0("Our target audience is WA residents. For people living",
       "in Washington State, they would like to know how the situation is.",
       "For example, how many cases are there recently? ",
-      "Is it dangerous for me to go to another county now?")
+      "Is it dangerous for me to go to another county now?Incorporating data with the policies,",
+      "would wearing a facial covering reduce the risk of being infected? ",
+      " Would getting a vaccine reduce the number of new cases? Should I get vaccinated?")
   })
   
 })

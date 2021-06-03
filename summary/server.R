@@ -3,8 +3,34 @@ library(shiny)
 shinyServer(function(input, output) {
 
   output$summary <- renderText({ 
-    if(input$summaries == "Analysis"){
-    
+    if(input$summaries == "Data Analysis 1"){
+      paste0("From the map, we could see that King County has the highest number of cases in total, ",
+             "followed by Pierce County and Spokane County.",
+             " After drawing out the cases by age, we  find a similar pattern.",
+             "From the histogram about cases of COVID-19 by age, the first ",
+             "one is also King County, Pierce County is the second, and Spokane ",
+             "County is the third.Among the people aged 50+, King county has the  ",
+             "highest number of confirmed cases. The elderly may have more health problems, and ",
+             "COVID-19 may bring even more health problems to them. Therefore, Washington State ",
+             "can consider placing relatively more medical resources in these states, like King County ",
+             "and Spokane County. Nevertheless, we cannot conclude that the rate of COVID-19 in ",
+             "King County is higher than in other counties. The case rate equals \"Number of cases ",
+             "with a specimen collection date in the 14-day period\" divided by Population. So, ",
+             "population is also a factor that impacts the rate. ")
+    }else if (input$summaries == "Data Analysis 2"){
+      paste0("We believe that vaccination has an impact on limiting the spread of the coronavirus. ",
+             "According to the news, starting from about January 2021,large numbers of residents in ",
+             "Washington State began to get a vaccine. At that time, the total number of existing cases and ",
+             "the number of new cases began to decline significantly. Therefore, we believe that ",
+             "vaccination can suppress the spread of the virus. Of course, there are also other factors ",
+             "that affect the spread of the virus. For instance, masks can also reduce the probability ",
+             "of being infected. Since Nov.2020, there have been many occasions where people were ",
+             "required to wear masks or facial coverings. In the following period of time, the number ",
+             "of new cases also dropped obviously. According to our analysis and information ",
+             "accessed from government agencies, masks and vaccines can effectively reduce the ",
+             "risk of infection. For those who are fully vaccinated, they can choose to wear a mask ",
+             "only when necessary. For those who are not fully vaccinated, wearing a mask and ",
+             "keeping a safe distance is the best choice.")
     }else if(input$summaries == "Data Quality"){
       paste0("First of all, this dataset is collected and downloaded from an official agency,",
              "the Washington State Department of Health. ",

@@ -14,7 +14,7 @@ library(ggplot2)
 shinyUI(fluidPage(
 
     # Application title
-    titlePanel("Cases of COVID for teenagers and childrens in WA"),
+    titlePanel("Cases of COVID for elder people in WA"),
 
     # Sidebar with a slider input for number of bins
     sidebarLayout(

@@ -9,7 +9,7 @@
 library(markdown)
 library(shiny)
 
-navbarPage("Final Project",
+navbarPage("Final Project Group BD1",
     tabPanel("Overview",
         titlePanel("Final Group Project"),
              
@@ -137,11 +137,31 @@ navbarPage("Final Project",
         
     ),
     
-    navbarMenu("Group member",
-        tabPanel("Guanyu Huo"),
-        tabPanel("Yihui Chen"),
-        tabPanel("Tong Chen"),
-        tabPanel("Zhuyi Gu")
+    navbarMenu("About Us",
+        tabPanel("Guanyu Huo",
+                 mainPanel(
+                     h2("Hi there, my name is Guanyu Huo. I am responsible for coding shiny visualization
+               for the Map part of our final project. [&_&/]")
+                 )
+                 ),
+        tabPanel("Yihui Chen",
+                 mainPanel(
+                     h2("Hi there, my name is Yihui Chen. I am responsible for coding shiny visualization
+               for the Histogram part of our final project. |#_#/|")
+                 )
+                 ),
+        tabPanel("Tong Chen",
+                 mainPanel(
+                     h2("Hi there, my name is Tong Chen. I am responsible for coding shiny visualization
+               for the Overview and Summary part of our final project. ($_$/)")
+                 )
+                 ),
+        tabPanel("Zhuyi Gu",
+                 mainPanel(
+                     h2("Hi there, my name is Zhuyi Gu. I am responsible for coding shiny visualization
+               for the Plot part of our final project.{*_*/}")
+                 )
+                 )
         
              
         

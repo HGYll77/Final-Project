@@ -109,10 +109,22 @@ function(input, output) {
             arrange(desc(sum_cases))
         if (input$cases_deaths == "deaths") {
             paste("The", max_county$subregion[1], "county has the largest number of deaths which is",
-                  max_county$sum_cases[1], ".")
+                  max_county$sum_cases[1], ". In my opinion, we need to consider the effect of population
+                  of each county when we talk about the Covid-19. Since Covid-19 is a high spreadable disease,
+                  the higher population often means more group gathering event. Thus, the group gathering 
+                  event might cause more infection. I think that is one reason to the largest number of 
+                  hospitalized cases in King County, where it has the largest population. Besides, the large 
+                  population of hospitalized people could cause the crowding of medical resource, which leads
+                  to plenty of deaths.")
         } else {
             paste("The", max_county$subregion[1], "county has the largest number of cases which is",
-                  max_county$sum_cases[1], ".")
+                  max_county$sum_cases[1], ". In my opinion, we need to consider the effect of population
+                  of each county when we talk about the Covid-19. Since Covid-19 is a high spreadable disease,
+                  the higher population often means more group gathering event. Thus, the group gathering 
+                  event might cause more infection. I think that is one reason to the largest number of 
+                  hospitalized cases in King County, where it has the largest population. Besides, the large 
+                  population of hospitalized people could cause the crowding of medical resource, which leads
+                  to plenty of deaths.")
         }
     })
     
@@ -140,7 +152,15 @@ function(input, output) {
     })
     
     output$Summary <- renderText({
-        paste0("As we can see in the graph, all counties reach two peaks at ... ....")})
+        paste0("The weekly number of cases increased plot can clearly show the timeline of COVID-19 in WA. As we can see in the graph, most counties reach the first peak at 2020.4. 
+           The most possible cause of this increase was the BLM campaigns and protests in each county in which a large number of people gathered for marches.
+           The number of growth decreases as quaratine law extends on May 1st to May 31st. As a few couties gradually re-open in May and June, the cases were trending up
+           agian in July. In the late 2020, a great number of citizens gathered outdoors for US president election campaigns, resulting in large outbreak of COVID. As shown
+           in the graph, all couties cases increased rapidly and reached their highest peak in 2020.11. With new restrictions announced on Nov.14 and the beginning of 
+           vaccination procedure in 2020.12, the spread of COVID got controlled. New cases number decreased greatly until march. The government started to reopen the 
+           state in March and 50% capacity of indoor spaces was allowed on March. 11 2021. The number increased again and reached another peak. With the vaccination process continued,
+           the number of cases steadily decreased in April and May.")})
+    
     
     output$summary <- renderText({ 
         if(input$summaries == "Data Analysis 1"){
@@ -186,7 +206,7 @@ function(input, output) {
                    " In addition, collection of data does not come from surveys ",
                    "or ask people questions that can cause bias. The data is directly derived from the test,",
                    "and there would be errors unless there is a problem with the test.",
-                   "It’s not obvious that certain population groups are harmed.")
+                   "It is not obvious that certain population groups are harmed.")
         }else{
             paste0("In the future, if we can merge the data of total population of Washington State, ",
                    "the total population of each county, and the gender of new cases into our original table,",

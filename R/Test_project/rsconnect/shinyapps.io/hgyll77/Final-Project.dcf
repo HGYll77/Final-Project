@@ -1,0 +1,14 @@
+name: Final-Project
+title: Final-Project
+username:
+account: hgyll77
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4238764
+bundleId: 4688146
+url: https://hgyll77.shinyapps.io/Final-Project/
+when: 1623078301.44144
+lastSyncTime: 1623078301.44145
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData(1).|.RData(2).

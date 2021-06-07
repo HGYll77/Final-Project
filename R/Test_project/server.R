@@ -13,8 +13,9 @@ hosp_data <- read.csv("Data/Hospitalizations.csv")
 death_data <- read.csv("Data/Deaths.csv")
 
 
-# Define server logic required to draw a histogram
+# Define server logic 
 function(input, output) {
+    # define data for histogram part
     histog_data <- reactive({
         case_data %>%
             group_by(County)%>%
@@ -28,11 +29,13 @@ function(input, output) {
         
     })
     
+    # plot data for histogram
     output$distPlot <- renderPlot({
         ggplot(histog_data()) +
             geom_bar(mapping = aes(x = County, y = Cases), fill = "skyblue", stat = "identity") + coord_flip()
     })
     
+    # write the text under the histogram for the histogram part
     output$distPlot_cat <- renderText({
         paste("The histogram shows the top", input$num, "counties with highest cases of COVID-19 among elders
                in Washington State. Elders are more susceptible to COVID-19 and it is really danger especially
@@ -44,12 +47,14 @@ function(input, output) {
                
     })
     
+    # write the text for the left part of Overview part
     output$picDesc <- renderText({
         paste0("The picture below shows the SARS-CoV-2, which causes COVID-19.",
                "Researching about the virus reveals that COVID-19 is much deadlier ",
                "and causes more health problem than normal flus.")
     })
     
+    # write the Introduction part of the Overview part
     output$intro <- renderText({
         paste0("Since the beginning of 2020, COVID-19 has continued to spread in the United States.",
                "The first reported case occurred in Seattle, Washington.",
@@ -59,6 +64,7 @@ function(input, output) {
                " Our research and analysis would mainly focus on the situation in Washington State. ")
     })
     
+    # write the Overview part of the Overview part
     output$overview <- renderText({
         paste0("Our target audience is WA residents. For people living",
                "in Washington State, they would like to know how the situation is.",

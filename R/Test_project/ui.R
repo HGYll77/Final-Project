@@ -9,7 +9,9 @@
 library(markdown)
 library(shiny)
 
+# Create the title bar of the app
 navbarPage("Final Project Group BD1",
+    # create the "Overview" page in the guide bar
     tabPanel("Overview",
         titlePanel("Final Group Project"),
              
@@ -62,6 +64,7 @@ navbarPage("Final Project Group BD1",
         
     ),
     
+    # create the histogram page in the shiny app
     tabPanel("Histogram",
         titlePanel("Cases of COVID-19 for elder people in WA"),
         sidebarLayout(
@@ -78,6 +81,7 @@ navbarPage("Final Project Group BD1",
         )
     ),
     
+    # create the map page in the shiny app
     tabPanel("Map",
              titlePanel("WA state county total cases and deaths situation"),
              
@@ -97,6 +101,7 @@ navbarPage("Final Project Group BD1",
         
     ),
     
+    # create the plot page in the shiny app
     tabPanel("Plot",
              # Application title
              titlePanel("Weekly Counts of COVID-19 by counties in WA"),
@@ -116,6 +121,7 @@ navbarPage("Final Project Group BD1",
         
     ),
     
+    # create the summary page in the shiny app
     tabPanel("Summary",
              titlePanel("Summary Page"),
              
@@ -137,6 +143,7 @@ navbarPage("Final Project Group BD1",
         
     ),
     
+    # create the "about us" page in the shiny app
     navbarMenu("About Us",
         tabPanel("Guanyu Huo",
                  mainPanel(

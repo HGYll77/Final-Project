@@ -72,6 +72,7 @@ function(input, output) {
                "Is it dangerous for me to go to another county now?")
     })
     
+    # create the data for the Map part
     choose_data <- reactive({
         if (input$cases_deaths == "deaths") {
             cases_data <- death_data %>%
@@ -98,6 +99,7 @@ function(input, output) {
         
     })
     
+    # plot the map for the Map part
     output$map <- renderPlot({
         ggplot(choose_data(), aes(long, lat, group = group, fill = sum_cases)) + 
             geom_polygon(col = 'black')  + 
@@ -110,6 +112,7 @@ function(input, output) {
             coord_quickmap()
     })
     
+    # write text under the map in the Map part
     output$summary_map <- renderText({
         max_county <- choose_data() %>%
             arrange(desc(sum_cases))
@@ -134,6 +137,7 @@ function(input, output) {
         }
     })
     
+    # Create data for the Plot part
     sample <- reactive({
         if(is.null(input$County)) {
             case_data 
@@ -145,7 +149,7 @@ function(input, output) {
         }
     })
     
-    
+    # Plot the graph for the Plot part
     output$weekPlot <- renderPlot({
         #sample$WeekStartDate <- ymd(sample$WeekStartData)
         ggplot(sample()) + 
@@ -157,6 +161,7 @@ function(input, output) {
         
     })
     
+    # Write text under the plot for the Plot part
     output$Summary <- renderText({
         paste0("The weekly number of cases increased plot can clearly show the timeline of COVID-19 in WA. As we can see in the graph, most counties reach the first peak at 2020.4. 
            The most possible cause of this increase was the BLM campaigns and protests in each county in which a large number of people gathered for marches.
@@ -167,7 +172,7 @@ function(input, output) {
            state in March and 50% capacity of indoor spaces was allowed on March. 11 2021. The number increased again and reached another peak. With the vaccination process continued,
            the number of cases steadily decreased in April and May.")})
     
-    
+    # Write text for the Summary part
     output$summary <- renderText({ 
         if(input$summaries == "Data Analysis 1"){
             paste0("From the map, we could see that King County has the highest number of cases in total, ",
